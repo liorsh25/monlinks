@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>MonLinks - Monetize your links easily</title>
+
+<script type="text/javascript">
+function showLink(){
+	var serverdUrl = document.getElementById("serverdUrl");
+	var enteredUrl = document.getElementById("destinationUrl");
+	var monlinksLink = document.getElementById("monlinksLink");
+	var theLink = serverdUrl.value+enteredUrl.value;
+	monlinksLink.innerHTML=theLink;
+	monlinksLink.href=theLink;
+}
+
+</script>
+</head>
+<body>
+<h1>MonLinks - Monetize your links easily</h1>
+<h1>הופכים את הקישורים שלכם לכסף -  MonLinks</h1>
+<input type="text" id="serverdUrl" style="width:800px;"  value="http://localhost:8080/monlinks/r/hufsha001/ci/up/14102014/ct/@u="></br></br>
+<input type="text" id="destinationUrl" style="width:800px;" >
+<input type="button" id="build" value="Build" onclick="showLink();"></br>
+<div  >
+<a id="monlinksLink" href="#" target="_blank">#</a>
+</div>
+</body>
+</html>
