@@ -6,6 +6,9 @@ import java.net.MalformedURLException;
 import java.util.HashMap;
 import java.util.Map;
 
+import org.apache.log4j.Logger;
+
+import servlets.RedirectServlet;
 import model.ISubscriber;
 import model.IShoppingSite;
 import model.ShoppingSite;
@@ -17,6 +20,7 @@ import model.affiliateCompany.VigLinksAffiliateCompany;
 
 public class DatabaseManager {
 	
+	private static Logger logger = Logger.getLogger(DatabaseManager.class);
 	private static Map<String,IShoppingSite> shoppingSites = new HashMap<String,IShoppingSite>();
 	private static Map<String,ISubscriber> subscribers = new HashMap<String,ISubscriber>();
 
@@ -65,10 +69,11 @@ public class DatabaseManager {
 		//The shop will be Next
 		shoppingSites.put("il.nextdirect.com", new ShoppingSite("Next Direct",".nextdirect.com","Next direct description","next.gif",viglinks,2,2));//in viglinks it written 8% (-25%)
 		shoppingSites.put("aliexpress.com", new ShoppingSite("Ali Express",".aliexpress.com","aliexpress description","ali.gif",viglinks,1,1));
-
+		logger.debug("shoppingSites="+shoppingSites);
 		
 		//The subscriber will be hufshatLeida
 		subscribers.put("hufsha001", new Subscriber("Hufshat Leida","BLOG","3a0aad395b02941d447b234383bed775","hufsha001"));
+		logger.debug("subscribers="+subscribers);
 	}
 	
 	public static IShoppingSite findShoppingSiteObject(String url){

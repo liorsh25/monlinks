@@ -11,12 +11,15 @@
   </welcome-file-list>
   <servlet>
     <description></description>
-    <display-name>redirectServlet</display-name>
-    <servlet-name>redirectServlet</servlet-name>
-    <servlet-class>servlets.redirectServlet</servlet-class>
+    <display-name>RedirectServlet</display-name>
+    <servlet-name>RedirectServlet</servlet-name>
+    <servlet-class>servlets.RedirectServlet</servlet-class>
   </servlet>
   <servlet-mapping>
-    <servlet-name>redirectServlet</servlet-name>
+    <servlet-name>RedirectServlet</servlet-name>
     <url-pattern>/r/*</url-pattern>
   </servlet-mapping>
+  <listener>
+    <listener-class>helpers.MyServletContextListener</listener-class>
+  </listener>
 </web-app>
