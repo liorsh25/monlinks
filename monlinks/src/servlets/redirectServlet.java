@@ -25,7 +25,7 @@ public class redirectServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 	
 	private IParametersValidator validator = new ParametersValidator();
-       
+       //TODO add log4j logging
     /**
      * @see HttpServlet#HttpServlet()
      */
